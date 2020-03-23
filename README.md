@@ -1,1 +1,1 @@
-# Lee_sujin_Chatapp
+# Chatapp
