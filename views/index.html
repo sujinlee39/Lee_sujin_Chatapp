@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Chatapp</title>
+	<link rel="stylesheet" href="css/main.css">
+	<link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+	<script src="https://unpkg.com/vue"></script>
+</head>
+
+<body>
+	<main id="app">
+		<section class="form-container">
+			<input v-text="nick" type="text" id="nickname" class="nickname" placeholder="Nickname">
+			<form>
+				<input v-model="message" class="message" id="textarea" placeholder="Type here">
+				<input @click.prevent="dispatchMessage" value="send" type="submit" @keyup.enter="submit">
+			</form>
+		</section>
+
+		<section class="messages">
+			<ul id="messages" v-for="message in messages">
+				<!-- render a new message component for every message -->
+				<newmessage :msg="message"></newmessage>
+			</ul>
+		</section>
+	</main>
+	<script src="/socket.io/socket.io.js"></script>
+	<script type="module" src="js/main.js"></script>
+</body>
+
+</html>
