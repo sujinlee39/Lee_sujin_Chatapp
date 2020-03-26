@@ -12,7 +12,7 @@
 <body>
 	<main id="app">
 		<section class="form-container">
-			<input type="text" id="nickname" class="nickname" placeholder="Nickname">
+			<input v-model="nickName" type="text" id="nickname" class="nickname" placeholder="Nickname">
 			<form>
 				<textarea v-model="message" class="text" id="textarea" placeholder="Type here" autocomplete="off" @keyup.enter="submit"></textarea>
 				<input id="send" @click.prevent="dispatchMessage" value="send" type="submit">
