@@ -14,8 +14,8 @@
 		<section class="form-container">
 			<input type="text" id="nickname" class="nickname" placeholder="Nickname">
 			<form>
-				<input v-model="message" class="message" id="textarea" placeholder="Type here">
-				<input @click.prevent="dispatchMessage" value="send" type="submit" @keyup.enter="submit">
+				<textarea v-model="message" class="text" id="textarea" placeholder="Type here" autocomplete="off" @keyup.enter="submit"></textarea>
+				<input id="send" @click.prevent="dispatchMessage" value="send" type="submit">
 			</form>
 		</section>
 
